@@ -38,8 +38,8 @@ app.post("/add", sendData);
 function sendData(req, res) {
     if (projectData) {
         projectData.date = req.body.date;
-        projectData.temperature = req.body.main.temp;
-        projectData.feelings = req.body.feelings;
+        projectData.temperature = req.body.temp;
+        projectData.feelings = req.body.content;
         res.send(projectData);
     }
 }
