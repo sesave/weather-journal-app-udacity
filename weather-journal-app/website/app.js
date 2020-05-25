@@ -74,6 +74,9 @@ const postData = async (apiURL = "", data = {}) => {
 
 /* DOM Update*/
 
+// temperatura calc 
+// https://gist.github.com/lordvaida/beb0487f86972b6ed9d056b80455a263
+
 const domUpdate = async () => {
     const request = await fetch("/all");
     try {
