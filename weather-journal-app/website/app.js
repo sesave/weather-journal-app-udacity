@@ -30,7 +30,7 @@ function clickerEvent(e) {
             postData("/add", {
                 date: newDate,
                 temp: userData.main.temp,
-                content,
+                content: content,
             });
         })
         .then(function (dataJSON) {
@@ -81,11 +81,11 @@ const domUpdate = async () => {
     const request = await fetch("/all");
     try {
         const allData = await request.json();
-        const celsius = allData.temp - 273;
+        const celsius = allData.temperature - 273;
         let fahrenheit = Math.floor(celsius * (9 / 5) + 32);
         dateDiv.innerHTML = allData.date;
         tempDiv.innerHTML = `${fahrenheit} degrees fahrenheit`;
-        contentDiv.innerHTML = allData.content;
+        contentDiv.innerHTML = allData.feelings;
     } catch (err) {
         console.log("error", err);
     }
